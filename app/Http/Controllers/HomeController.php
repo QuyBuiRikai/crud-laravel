@@ -30,6 +30,6 @@ class HomeController extends Controller
       dd($blog->toSql(), $blog->get(2));
       dd($blog->take(2)->toSql());
       return $blog;
-        return view('home');
+        // return view('home');
     }
 }
