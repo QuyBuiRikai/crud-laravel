@@ -27,7 +27,7 @@ class HomeController extends Controller
       // blog with count
       $blog = Blog::withCount('comments');
       // comment 
-      // dd($blog->toSql(), $blog->get(2));
+      dd($blog->toSql(), $blog->get(2));
       dd($blog->take(2)->toSql());
       return $blog;
         return view('home');
