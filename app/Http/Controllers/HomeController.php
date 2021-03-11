@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Blog;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+      // blog with count
+      $blog = Blog::withCount('comments');
+      // comment 
+      dd($blog->toSql(), $blog->get(2));
+      dd($blog->take(2)->toSql());
+      return $blog;
+        // return view('home');
     }
 }
